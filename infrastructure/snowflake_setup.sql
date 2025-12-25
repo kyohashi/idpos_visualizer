@@ -1,0 +1,14 @@
+-- DWH creation
+CREATE OR REPLACE WAREHOUSE POS_WH
+    WITH WAREHOUSE_SIZE = 'X-SMALL'
+    AUTO_SUSPEND = 60
+    AUTO_RESUME = TRUE
+    COMMENT = 'Warehouse for POS data processing';
+
+-- Database creation
+CREATE OR REPLACE DATABASE POS_DB
+COMMENT = 'Main database for POS Data Visualizer';
+
+-- Shema definition
+CREATE OR REPLACE SCHEMA POS_DB.RAW;
+CREATE OR REPLACE SCHEMA POS_DB.ANALYTICS;

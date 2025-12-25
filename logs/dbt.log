@@ -1,0 +1,64 @@
+[0m12:48:12.360210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff93bb4ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9381ba50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff93bb47d0>]}
+
+
+============================== 12:48:12.392674 | 5237d4bf-c9a8-4771-b8b4-505e69d2eedd ==============================
+[0m12:48:12.392674 [info ] [MainThread]: Running with dbt=1.11.2
+[0m12:48:12.393137 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'log_path': 'logs', 'empty': 'None', 'warn_error': 'None', 'introspect': 'True', 'log_format': 'default', 'write_json': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt init dbt_idpos_viz', 'static_parser': 'True', 'profiles_dir': '/home/vscode/.dbt', 'indirect_selection': 'eager', 'fail_fast': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'no_print': 'None', 'printer_width': '80', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m12:48:12.440795 [info ] [MainThread]: Creating dbt configuration folder at /home/vscode/.dbt
+[0m12:48:12.443445 [debug] [MainThread]: Starter project path: /workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m12:48:12.460224 [info ] [MainThread]: 
+Your new dbt project "dbt_idpos_viz" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:48:12.460688 [info ] [MainThread]: Setting up your profile.
+[0m12:48:37.516469 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m12:48:37.516890 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m12:48:37.517312 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m12:49:48.732530 [error] [MainThread]: Encountered an error:
+
+[0m12:49:48.735459 [error] [MainThread]: Traceback (most recent call last):
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/idpos_visualizer/.venv/lib/python3.11/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:49:48.737317 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 96.40165, "process_in_blocks": "1344", "process_kernel_time": 0.498612, "process_mem_max_rss": "212348", "process_out_blocks": "28181", "process_user_time": 2.454706}
+[0m12:49:48.737995 [debug] [MainThread]: Command `dbt init` failed at 12:49:48.737913 after 96.40 seconds
+[0m12:49:48.738385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9381a750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff94e48cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9386c690>]}
+[0m12:49:48.738803 [debug] [MainThread]: Flushing usage events
+[0m12:49:49.581638 [debug] [MainThread]: An error was encountered while trying to flush usage events

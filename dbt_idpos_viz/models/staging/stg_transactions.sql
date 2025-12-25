@@ -12,7 +12,7 @@ renamed as (
         quantity,
         sales_value as sales_amount,
         store_id,
-        day as transaction_date,
+        cast(day as date) as transaction_date,
         week_no
     from source
 )

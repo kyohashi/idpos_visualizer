@@ -1,0 +1,21 @@
+!.gitkeep
+
+# --- Python / Environment ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Never commit your actual passwords or tokens.
+.env
+
+# --- Data ---
+# Raw data files are too large for Git and should be managed in DWH (Snowflake).
+data/
+
+# --- R / renv ---
+.Rproj.user
+.Rhistory
+.RData
+renv/library/
+renv/staging/

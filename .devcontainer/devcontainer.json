@@ -1,0 +1,30 @@
+{
+    "name": "idpos_visualizer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "innoverio.vscode-dbt-power-user",
+                "REditorSupport.r",
+                "snowflake.snowflake-vsc"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    // Automatically fix lint errors and organize imports using Ruff
+                    "source.fixAll.ruff": "explicit",
+                    "source.organizeImports.ruff": "explicit"
+                },
+                // Set Ruff as the default formatter for Python
+                "[python]": {
+                    "editor.defaultFormatter": "charliermarsh.ruff"
+                }
+            }
+        }
+    },
+    "remoteUser": "vscode"
+}

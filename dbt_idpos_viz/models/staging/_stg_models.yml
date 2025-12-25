@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Staging table for transactions data."
+    columns:
+      - name: household_id
+        tests:
+          - not_null
+      - name: basket_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+      - name: transaction_date
+        tests:
+          - not_null
+  - name: stg_products
+    description: "Staging table for products data."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_demographics
+    description: "Staging table for demographics data."
+    columns:
+      - name: household_id
+        tests:
+          - unique
+          - not_null

@@ -35,7 +35,11 @@ def load_csv_to_snowflake(file_path: str, table_name: str):
         print(f"Starting ingestion for: {file_path} into table {table_name}")
 
         # Load the local CSV
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path).reset_index()
+
+        df.columns = [
+            col.upper() for col in df.columns
+        ]  # Snowflake uses uppercase column names by default
 
         # Upload to Snowflake
         success, nchunks, nrows, _ = write_pandas(

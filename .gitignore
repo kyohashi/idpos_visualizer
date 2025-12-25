@@ -1,5 +1,7 @@
 !.gitkeep
 
+logs/
+
 # --- Python / Environment ---
 .venv/
 venv/

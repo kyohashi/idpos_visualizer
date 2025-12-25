@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+    schema: RAW
+    tables:
+      - name: TRANSACTIONS
+      - name: PRODUCTS
+      - name: DEMOGRAPHICS
+     

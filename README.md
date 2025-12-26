@@ -38,7 +38,10 @@ Execute the SQL script found in infrastructure/snowflake_setup.sql within a Snow
 
 ## Step2: Data Requirements
 
-To ensure the dbt models and Shiny app work correctly, your CSV files in the `data/` directory must contain the following specific columns. The ingestion script will normalize these to uppercase in Snowflake, and dbt will then map them to the analytical schema.
+To ensure the dbt models and Shiny app work correctly, your CSV files in the `data/` directory must contain the following specific columns.
+The `data/` folder already includes synthetic demo files: `hh_demographic.csv`, `product.csv`, and `transaction_data.csv`.
+
+The ingestion script will normalize these to uppercase in Snowflake, and dbt will then map them to the analytical schema.
 
 ### Required CSV Files & Columns
 | File Name | Required Source Columns |

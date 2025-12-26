@@ -10,6 +10,7 @@
                 "charliermarsh.ruff",
                 "innoverio.vscode-dbt-power-user",
                 "REditorSupport.r",
+                "REditorSupport.r-lsp",
                 "snowflake.snowflake-vsc"
             ],
             "settings": {
@@ -22,7 +23,12 @@
                 // Set Ruff as the default formatter for Python
                 "[python]": {
                     "editor.defaultFormatter": "charliermarsh.ruff"
-                }
+                },
+                "r.bracketedPaste": true,
+                "r.plot.view": "httpgd",
+                "r.rterm.linux": "/usr/local/bin/radian",
+                "r.session.view": "Editor Group 1",
+                "r.lsp.diagnostics": true
             }
         }
     },

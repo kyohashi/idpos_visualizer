@@ -1,6 +1,7 @@
 !.gitkeep
 
 logs/
+.DS_Store
 
 # --- Python / Environment ---
 .venv/
@@ -13,7 +14,8 @@ __pycache__/
 
 # --- Data ---
 # Raw data files are too large for Git and should be managed in DWH (Snowflake).
-data/
+data/*
+!data/.gitkeep
 
 # --- R / renv ---
 .Rproj.user

@@ -2,6 +2,7 @@
 
 This repository provides a complete data analysis platform for retail ID-POS data. It streamlines the entire data lifecycle: **Ingesting** raw CSV files into Snowflake using Python, **Transforming** data into analytical marts with dbt, and **Visualizing** insights via an interactive R Shiny dashboard.
 
+![ID-POS Dashboard Demo](assets/demo.gif)
 
 
 ## 🏗 System Architecture
@@ -10,6 +11,8 @@ The platform is divided into three main stages:
 1.  **Ingestion (Python)**: Loads local CSV files (Transactions, Products, Demographics) into the Snowflake `RAW` schema.
 2.  **Transformation (dbt)**: Converts raw data into `STAGING` views and final `MARTS` tables (e.g., `fct_sales_summary`).
 3.  **Visualization (R Shiny)**: An interactive dashboard that connects to the analytical marts to provide business insights.
+
+![System Architecture](assets/system_architecture.png)
 
 ## 🛠 Prerequisites
 

@@ -33,14 +33,28 @@ Create a `.env` file by copying `.env.example` in the root directory and populat
 ### Step 1: Infrastructure Setup
 Execute the SQL script found in infrastructure/snowflake_setup.sql within a Snowflake Worksheet. This creates the required POS_DB database, POS_WH warehouse, and schemas (RAW, ANALYTICS).
 
-### Step 2: Data Ingestion
+## Step2: Data Requirements
+
+To ensure the dbt models and Shiny app work correctly, your CSV files in the `data/` directory must contain the following specific columns. The ingestion script will normalize these to uppercase in Snowflake, and dbt will then map them to the analytical schema.
+
+### Required CSV Files & Columns
+| File Name | Required Source Columns |
+| :--- | :--- |
+| `transaction_data.csv` | `BASKET_ID`, `DAY`, `HOUSEHOLD_KEY`, `PRODUCT_ID`, `QUANTITY`, `SALES_VALUE` |
+| `product.csv` | `PRODUCT_ID`, `DEPARTMENT`, `COMMODITY_DESC`, `CURR_SIZE_RES` |
+| `hh_demographic.csv` | `HOUSEHOLD_KEY`, `AGE_DESC`, `MARITAL_STATUS_CODE`, `INCOME_DESC`, `HOMEOWNER_DESC`, `HH_COMP_DESC`, `HOUSEHOLD_SIZE_DESC` |
+
+> **Important**: If your source columns differ from the defaults, edit the staging models in `dbt_idpos_viz/models/staging/` to map them correctly.
+
+### Step 3: Data Ingestion
 Ensure your CSV files are in the data/ directory, then run the Python ingestion script to upload your data to Snowflake's RAW schema:
+
 ```bash
 uv run python ingestion/load_data.py
 ```
 This script creates and populates the TRANSACTIONS, PRODUCTS, and DEMOGRAPHICS tables.
 
-### Step 3: dbt Transformation
+### Step 4: dbt Transformation
 Navigate to the dbt project directory and build the analytical models:
 
 ```bash
@@ -49,7 +63,7 @@ uv run --env-file ../.env dbt build --profiles-dir .
 ```
 This creates the staging views and final analytical tables in the ANALYTICS_MARTS schema.
 
-### Step 4: Launch the Shiny App
+### Step 5: Launch the Shiny App
 Start the interactive dashboard from your R console (Radian):
 
 ```R

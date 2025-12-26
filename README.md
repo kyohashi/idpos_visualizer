@@ -77,10 +77,3 @@ renv::restore()
 shiny::runApp("app", port = 8080)
 ```
 Open the application via the VS Code popup or the PORTS tab (port 8080).
-
-## 📁 Project Structure
--  `.devcontainer/`: Definitions for the Linux-based R 4.5.0 environment.
-- `ingestion/`: Python scripts for loading data into Snowflake.
-- `dbt_idpos_viz/`: dbt project containing SQL models for staging and marts.
-- `R/`: Connection utilities using the libSnowflake.so ODBC driver.
-- `app/`: Shiny application UI and Server logic.

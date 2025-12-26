@@ -54,6 +54,7 @@ Start the interactive dashboard from your R console (Radian):
 
 ```R
 # Run inside the Radian R console
+renv::restore()
 shiny::runApp("app", port = 8080)
 ```
 Open the application via the VS Code popup or the PORTS tab (port 8080).

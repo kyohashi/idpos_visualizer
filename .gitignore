@@ -12,11 +12,6 @@ __pycache__/
 # Never commit your actual passwords or tokens.
 .env
 
-# --- Data ---
-# Raw data files are too large for Git and should be managed in DWH (Snowflake).
-data/*
-!data/.gitkeep
-
 # --- R / renv ---
 .Rproj.user
 .Rhistory

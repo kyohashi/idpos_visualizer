@@ -47,6 +47,8 @@ To ensure the dbt models and Shiny app work correctly, your CSV files in the `da
 | `product.csv` | `PRODUCT_ID`, `DEPARTMENT`, `COMMODITY_DESC`, `CURR_SIZE_RES` |
 | `hh_demographic.csv` | `HOUSEHOLD_KEY`, `AGE_DESC`, `MARITAL_STATUS_CODE`, `INCOME_DESC`, `HOMEOWNER_DESC`, `HH_COMP_DESC`, `HOUSEHOLD_SIZE_DESC` |
 
+Please refer to the [Dunnhumby - The Complete Journey](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey/data) dataset for the meaning of each column used in the demo.
+
 > **Important**: If your source columns differ from the defaults, edit the staging models in `dbt_idpos_viz/models/staging/` to map them correctly.
 
 ### Step 3: Data Ingestion
